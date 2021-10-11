@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello-service
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+      - image: ghcr.io/vladimirvivien/hello-service
+        env:
+        - name: TARGET
+          value: "Go Sample v1"
